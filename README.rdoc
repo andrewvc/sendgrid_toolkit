@@ -104,7 +104,7 @@ If you want to retrieve the created date for each bounce use
 Sendgrid does not re-send emails to emails on the bounce list. To remove an email address from the bounce list use
    result = bounces.delete :email => 'test@example.net'
 
-If something goes wrong, or the email isn't on the list; instead of returning +delete+ will raise an error of class +BounceEmailDoesNotExist+
+If the email isn't on the list; instead of returning +delete+ will raise an error of class +BounceEmailDoesNotExist+
 
 = Behind the Scenes
 Things you may want to know:
