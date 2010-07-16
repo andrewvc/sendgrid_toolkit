@@ -25,6 +25,7 @@ Gem::Specification.new do |s|
      "lib/sendgrid_toolkit/sendgrid_error.rb",
      "lib/sendgrid_toolkit/statistics.rb",
      "lib/sendgrid_toolkit/unsubscribes.rb",
+     "lib/sendgrid_toolkit/bounces.rb",
      "sendgrid_toolkit.gemspec",
      "spec/helper.rb",
      "spec/lib/sendgrid_toolkit/abstract_sendgrid_client_spec.rb",
