@@ -81,9 +81,9 @@ If you use Sendgrid's category feature, you can get a listing of your categories
   cats = statistics.list_categories
 +cats+ is an array of hashes, each of which has a +category+ key that holds the name of a category.
 
-=== Bounces Class
+== Bounces Class
 
-Instantiate the Statistics object:
+Instantiate the Bounces object:
   bounces = SendgridToolkit::Bounces.new(api_user, api_key)
 
 === Retrieve Bounces
