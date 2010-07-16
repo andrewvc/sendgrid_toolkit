@@ -81,6 +81,31 @@ If you use Sendgrid's category feature, you can get a listing of your categories
   cats = statistics.list_categories
 +cats+ is an array of hashes, each of which has a +category+ key that holds the name of a category.
 
+=== Bounces Class
+
+Instantiate the Statistics object:
+  bounces = SendgridToolkit::Bounces.new(api_user, api_key)
+
+=== Retrieve Bounces
+To retrieve statistics, use:
+  bounce_list = bounces.retrieve
+
+If you want to retrieve the created date for each bounce use
+  bounce_list = bounces.retrieve :date => true
+
+* +bounce_list+ will be an array of hashes, each of which contains the following keys:
+* +email+:  The email address that bounced
+* +reason+: The reason the email was bounced
+* +status+: The SMTP status code the bounce generated
+* +clicks+: The number of users who clicked on a link in your email
+* +created+: Present if +retrieve+ is passed :date => true. This is a string containing the timestamp from when the bounce was received by sendgrid  
+
+=== Delete Bounce Email Address
+Sendgrid does not re-send emails to emails on the bounce list. To remove an email address from the bounce list use
+   result = bounces.delete :email => 'test@example.net'
+
+If something goes wrong, or the email isn't on the list; instead of returning +delete+ will raise an error of class +BounceEmailDoesNotExist+
+
 = Behind the Scenes
 Things you may want to know:
 
